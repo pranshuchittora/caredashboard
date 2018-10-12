@@ -4,8 +4,14 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import PhoneIcon from '@material-ui/icons/Phone';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
+import HelpIcon from '@material-ui/icons/Help';
+import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 import Typography from '@material-ui/core/Typography';
 
+import Home from '../components/Home/Home'
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -21,11 +27,12 @@ TabContainer.propTypes = {
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    width: '100%',
     backgroundColor: theme.palette.background.paper,
   },
 });
 
-class SimpleTabs extends React.Component {
+class ScrollableTabsButtonForce extends React.Component {
   state = {
     value: 0,
   };
@@ -40,23 +47,37 @@ class SimpleTabs extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
-          <Tabs value={value} onChange={this.handleChange}>
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" href="#basic-tabs" />
+        <AppBar position="static" color="default">
+          <Tabs
+            value={value}
+            onChange={this.handleChange}
+        scrollable
+            scrollButtons="on"
+            indicatorColor="primary"
+            textColor="primary"
+       
+    
+          >
+            <Tab label="Home" />
+            <Tab label="About" />
+            <Tab label="Members"  />
+            <Tab label="Activities"/>
+            <Tab label="Events"  />
+      
           </Tabs>
         </AppBar>
-        {value === 0 && <TabContainer>Item One</TabContainer>}
+        {value === 0 && <Home />}
         {value === 1 && <TabContainer>Item Two</TabContainer>}
         {value === 2 && <TabContainer>Item Three</TabContainer>}
+        {value === 3 && <TabContainer>Item Four</TabContainer>}
+        {value === 4 && <TabContainer>Item Five</TabContainer>}
       </div>
     );
   }
 }
 
-SimpleTabs.propTypes = {
+ScrollableTabsButtonForce.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleTabs);
+export default withStyles(styles)(ScrollableTabsButtonForce);
