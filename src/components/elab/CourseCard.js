@@ -18,6 +18,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from "@material-ui/core/Divider";
 import ElabKTR from './KTR/ElabKTR'
 import ElabVDP from './VDP/ElabVDP'
+
+import CompIco from '@material-ui/icons/DesktopMac'
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -61,11 +63,15 @@ class RecipeReviewCard extends React.Component {
       <Card className={classes.card}>
     
      
-        <CardContent>
+        <CardContent style={{display:"flex"}}>
+          <div>
           <Typography variant="h4" style={{color:colorProps}}>{this.props.course}</Typography>
           <Typography component="p">
            An Online Code evaluation tool
           </Typography>
+          </div>
+          <IconButton style={{transform:"scale(1.9)",textAlign:"center",margin:"auto"}}><CompIco  /> </IconButton>
+          
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
       
