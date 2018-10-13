@@ -16,7 +16,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import ElabCSE from '../components/elab/KTR/CSE/ElabCSE'
+import Labs from '../../Labs'
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -52,18 +52,18 @@ class RecipeReviewCard extends React.Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
- 
+
   render() {
     const { classes } = this.props;
-    const colorProps = this.props.colorHead
+
     return (
       <Card className={classes.card}>
     
      
-        <CardContent>
-          <Typography variant="h4" style={{color:colorProps}}>{this.props.course}</Typography>
+        <CardContent style={{textAlign:"center"}} >
+          <Typography variant="h5" >CSE</Typography>
           <Typography component="p">
-           An Online Code evaluation tool
+          Compute Science & Engineering KTR
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
@@ -81,7 +81,11 @@ class RecipeReviewCard extends React.Component {
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <ElabCSE />
+          <Labs label="OOPS" />
+          <Labs label="DS" />
+          <Labs label="OS" />
+          <Labs label="DBMS" />
+          <Labs label="C" />
           </CardContent>
         </Collapse>
       </Card>
