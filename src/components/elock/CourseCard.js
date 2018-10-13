@@ -12,14 +12,17 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import Divider from "@material-ui/core/Divider";
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ElabCSE from './CSE/ElabCSE'
-import ElabIT from './IT/ElabIT'
-import ElabSWE from './SWE/ElabSWE'
+import Divider from "@material-ui/core/Divider";
+import ELockKTR from './KTR/ELockKTR'
+import ELockOther from './Others/ELockOther'
+
+import CompIco from '@material-ui/icons/DesktopMac'
 const styles = theme => ({
   card: {
-  
+    maxWidth: 400,
   },
   media: {
     height: 0,
@@ -52,17 +55,26 @@ class RecipeReviewCard extends React.Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
-
+ 
   render() {
     const { classes } = this.props;
-
+    const colorProps = this.props.colorHead
     return (
       <Card className={classes.card}>
     
      
-        <CardContent style={{textAlign:"center",display:"flex"}} >
-          <Typography variant="h6" >KTR</Typography>
-
+        <CardContent style={{display:"flex"}}>
+          <div>
+          <Typography variant="h4" style={{color:colorProps}}>{this.props.course}</Typography>
+          <Typography component="p">
+           An Online Code evaluation tool
+          </Typography>
+          </div>
+          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><CompIco style={{color:colorProps}} /> </IconButton>
+          
+        </CardContent>
+        <CardActions className={classes.actions} disableActionSpacing>
+      
           <IconButton
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expanded,
@@ -73,15 +85,12 @@ class RecipeReviewCard extends React.Component {
           >
             <ExpandMoreIcon />
           </IconButton>
-        </CardContent>
- 
+        </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-          <ElabCSE />
+            <ELockKTR />
             <Divider />
-            <ElabIT />
-            <Divider />
-            <ElabSWE />
+            <ELockOther />
           </CardContent>
         </Collapse>
       </Card>

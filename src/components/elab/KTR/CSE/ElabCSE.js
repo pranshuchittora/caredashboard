@@ -55,7 +55,7 @@ class RecipeReviewCard extends React.Component {
 
   render() {
     const { classes } = this.props;
-
+    const colorProp = this.props.colorHead
     return (
       <Card className={classes.card}>
     
@@ -78,7 +78,7 @@ class RecipeReviewCard extends React.Component {
           <CardContent>
           <Labs label="OOPS With Link" link="http://google.com" />
           
-          <Labs label="DS" link="http://youtube.com"/>
+          <Labs label="DS" link="http://youtube.com"  btnColor={colorProp} />
           <Labs label="OS" />
           <Labs label="DBMS" />
           <Labs label="C" />

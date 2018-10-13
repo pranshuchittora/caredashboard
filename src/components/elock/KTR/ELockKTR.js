@@ -14,9 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import Divider from "@material-ui/core/Divider";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ElabCSE from './CSE/ElabCSE'
-import ElabIT from './IT/ElabIT'
-import ElabSWE from './SWE/ElabSWE'
+import Labs from '../Labs'
 const styles = theme => ({
   card: {
   
@@ -48,14 +46,14 @@ const styles = theme => ({
 
 class RecipeReviewCard extends React.Component {
   state = { expanded: false };
-
+  
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
   render() {
     const { classes } = this.props;
-
+    const colorProps = this.props.colorHead
     return (
       <Card className={classes.card}>
     
@@ -77,11 +75,9 @@ class RecipeReviewCard extends React.Component {
  
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-          <ElabCSE />
-            <Divider />
-            <ElabIT />
-            <Divider />
-            <ElabSWE />
+          <Labs label="WINDOWS" btncolor={colorProps}  />
+          <Labs label="MAC" btncolor={colorProps}  />
+          <Labs label="LINUX" btncolor={colorProps}  />
           </CardContent>
         </Collapse>
       </Card>

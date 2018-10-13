@@ -20,6 +20,11 @@ import {
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import ElabCourseCard from "../components/elab/CourseCard";
+import EProjCourseCard from '../components/eProject/CourseCard';
+import EThinkCourseCard from '../components/eThink/CourseCard'
+import ECurrCourseCard from '../components/eCurricula/CourseCard'
+import ESkillCourseCard from '../components/eSkill/CourseCard'
+import ELockCourseCard from '../components/elock/CourseCard'
 
 const drawerWidth = 240;
 
@@ -167,18 +172,21 @@ class MiniDrawer extends React.Component {
           >
           
           <Grid item xs={12} md={4} lg={3}>
-                <ElabCourseCard course="eLab" colorHead="#283593" />
+                <ElabCourseCard course="eLab" colorHead="#3F51B5" />
           </Grid>
           <Grid item xs={12} md={4} lg={3}>
-                <ElabCourseCard course="eProject" colorHead="#00695C" />
+                <EProjCourseCard course="eProject" colorHead="#2196F3" />
+          </Grid> 
+          <Grid item xs={12} md={4} lg={3}>
+                <EThinkCourseCard course="eThink" colorHead="#009688" />
+          </Grid> 
+          <Grid item xs={12} md={4} lg={3}>
+                <ECurrCourseCard course="eCuriculla" colorHead="#4CAF50" />
+          </Grid> 
+          <Grid item xs={12} md={4} lg={3}>
+                <ESkillCourseCard course="eSkill" colorHead="#CDDC39" />
           </Grid> <Grid item xs={12} md={4} lg={3}>
-                <ElabCourseCard course="eThink" colorHead="#000fff" />
-          </Grid> <Grid item xs={12} md={4} lg={3}>
-                <ElabCourseCard course="eCuriculla" colorHead="#4527A0" />
-          </Grid> <Grid item xs={12} md={4} lg={3}>
-                <ElabCourseCard course="eSkill" colorHead="#558B2F" />
-          </Grid> <Grid item xs={12} md={4} lg={3}>
-                <ElabCourseCard course="eLock" colorHead="#D84315" />
+                <ELockCourseCard course="eLock" colorHead="#D84315" />
           </Grid>
 
           </Grid>

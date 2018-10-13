@@ -70,7 +70,7 @@ class RecipeReviewCard extends React.Component {
            An Online Code evaluation tool
           </Typography>
           </div>
-          <IconButton style={{transform:"scale(1.9)",textAlign:"center",margin:"auto"}}><CompIco  /> </IconButton>
+          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><CompIco style={{color:colorProps}} /> </IconButton>
           
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
