@@ -16,9 +16,9 @@ const styles = theme => ({
 function ContainedButtons(props) {
   const { classes } = props;
   return (
-    <div>
+    <div >
     
-      <Button variant="contained" color="primary" className={classes.button}>
+      <Button variant="contained" color="primary" className={classes.button} href={props.link} target="_blank"  >
        {props.label}
       </Button>
    

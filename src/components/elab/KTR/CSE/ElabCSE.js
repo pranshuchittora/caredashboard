@@ -76,8 +76,9 @@ class RecipeReviewCard extends React.Component {
  
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-          <Labs label="OOPS" />
-          <Labs label="DS" />
+          <Labs label="OOPS With Link" link="http://google.com" />
+          
+          <Labs label="DS" link="http://youtube.com"/>
           <Labs label="OS" />
           <Labs label="DBMS" />
           <Labs label="C" />

@@ -16,8 +16,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from "@material-ui/core/Divider";
-import ElabKTR from '../components/elab/KTR/ElabKTR'
-import ElabVDP from '../components/elab/VDP/ElabVDP'
+import ElabKTR from './KTR/ElabKTR'
+import ElabVDP from './VDP/ElabVDP'
 const styles = theme => ({
   card: {
     maxWidth: 400,

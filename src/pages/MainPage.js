@@ -19,7 +19,7 @@ import {
 
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import CourseCard from "../components/CourseCard";
+import ElabCourseCard from "../components/elab/CourseCard";
 
 const drawerWidth = 240;
 
@@ -167,18 +167,18 @@ class MiniDrawer extends React.Component {
           >
           
           <Grid item xs={12} md={4} lg={3}>
-                <CourseCard course="eLab" colorHead="#283593" />
+                <ElabCourseCard course="eLab" colorHead="#283593" />
           </Grid>
           <Grid item xs={12} md={4} lg={3}>
-                <CourseCard course="eProject" colorHead="#00695C" />
+                <ElabCourseCard course="eProject" colorHead="#00695C" />
           </Grid> <Grid item xs={12} md={4} lg={3}>
-                <CourseCard course="eThink" colorHead="#000fff" />
+                <ElabCourseCard course="eThink" colorHead="#000fff" />
           </Grid> <Grid item xs={12} md={4} lg={3}>
-                <CourseCard course="eCuriculla" colorHead="#4527A0" />
+                <ElabCourseCard course="eCuriculla" colorHead="#4527A0" />
           </Grid> <Grid item xs={12} md={4} lg={3}>
-                <CourseCard course="eSkill" colorHead="#558B2F" />
+                <ElabCourseCard course="eSkill" colorHead="#558B2F" />
           </Grid> <Grid item xs={12} md={4} lg={3}>
-                <CourseCard course="eLock" colorHead="#D84315" />
+                <ElabCourseCard course="eLock" colorHead="#D84315" />
           </Grid>
 
           </Grid>
