@@ -12,11 +12,11 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import Divider from "@material-ui/core/Divider";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Labs from '../../Labs'
+import ElabCSE from './CSE/ElabCSE'
+import ElabIT from './IT/ElabIT'
+import ElabSWE from './SWE/ElabSWE'
 const styles = theme => ({
   card: {
   
@@ -61,7 +61,7 @@ class RecipeReviewCard extends React.Component {
     
      
         <CardContent style={{textAlign:"center",display:"flex"}} >
-          <Typography variant="h6" >SWE</Typography>
+          <Typography variant="h6" >KTR</Typography>
           <IconButton
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expanded,
@@ -76,11 +76,11 @@ class RecipeReviewCard extends React.Component {
  
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-          <Labs label="OOPS" />
-          <Labs label="DS" />
-          <Labs label="OS" />
-          <Labs label="DBMS" />
-          <Labs label="C" />
+          <ElabCSE />
+            <Divider />
+            <ElabIT />
+            <Divider />
+            <ElabSWE />
           </CardContent>
         </Collapse>
       </Card>

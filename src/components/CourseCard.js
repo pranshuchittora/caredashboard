@@ -15,8 +15,9 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import ElabCSE from '../components/elab/KTR/CSE/ElabCSE'
+import Divider from "@material-ui/core/Divider";
+import ElabKTR from '../components/elab/KTR/ElabKTR'
+import ElabVDP from '../components/elab/VDP/ElabVDP'
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -81,7 +82,9 @@ class RecipeReviewCard extends React.Component {
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <ElabCSE />
+            <ElabKTR />
+            <Divider />
+            <ElabVDP />
           </CardContent>
         </Collapse>
       </Card>
