@@ -61,7 +61,7 @@ class RecipeReviewCard extends React.Component {
           <div>
           <Typography variant="h4" style={{color:colorProps}}>{this.props.course}</Typography>
           <Typography component="p">
-           An Online tool for learning remotely eCurr
+           An Online tool for learning remotely 
           </Typography>
           </div>
           <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><SearchIco style={{color:colorProps}} /> </IconButton>

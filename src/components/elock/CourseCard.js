@@ -19,7 +19,7 @@ import Divider from "@material-ui/core/Divider";
 import ELockKTR from './KTR/ELockKTR'
 import ELockOther from './Others/ELockOther'
 
-import CompIco from '@material-ui/icons/DesktopMac'
+import LockIco from '@material-ui/icons/Lock'
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -70,7 +70,7 @@ class RecipeReviewCard extends React.Component {
            An Online Code evaluation tool
           </Typography>
           </div>
-          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><CompIco style={{color:colorProps}} /> </IconButton>
+          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><LockIco style={{color:colorProps}} /> </IconButton>
           
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>

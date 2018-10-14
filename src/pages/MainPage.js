@@ -131,14 +131,16 @@ class MiniDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
+            <img style={{height:50,background:"rgba(255,255,255,0.6)",padding:"5px 10px",marginRight:10}} src="http://care.srmuniv.ac.in/logo.png" />
             <Typography variant="h6" color="inherit" noWrap>
-              SRM Centre for Applied Research in Education
+              Centre for Applied Research in Education
             </Typography>
           </Toolbar>
         </AppBar>
         <Drawer
+          title="SRMCARE"
           variant="permanent"
-          elevation={5}
+          elevation={20}
           classes={{
             paper: classNames(
               classes.drawerPaper,
@@ -154,6 +156,7 @@ class MiniDrawer extends React.Component {
               ) : (
                 <ChevronLeftIcon />
               )}
+            
             </IconButton>
           </div>
           <Divider />
@@ -171,7 +174,7 @@ class MiniDrawer extends React.Component {
             spacing={24}
           >
           
-          <Grid item xs={12} md={4} lg={3}>
+          <Grid item xs={12} md={4} lg={3} >
                 <ElabCourseCard course="eLab" colorHead="#3F51B5" />
           </Grid>
           <Grid item xs={12} md={4} lg={3}>
