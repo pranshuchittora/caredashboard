@@ -3,20 +3,23 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from "@material-ui/core/Divider";
-import Labs from './Labs'
-
-import AssignIco from '@material-ui/icons/Assignment'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ElabCSE from './CSE/ElabCSE'
+import ElabIT from './IT/ElabIT'
+import ElabSWE from './SWE/ElabSWE'
 const styles = theme => ({
   card: {
-    maxWidth: 400,
+  
   },
   media: {
     height: 0,
@@ -49,26 +52,17 @@ class RecipeReviewCard extends React.Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
- 
+
   render() {
     const { classes } = this.props;
-    const colorProps = this.props.colorHead
+
     return (
       <Card className={classes.card}>
     
      
-        <CardContent style={{display:"flex"}}>
-          <div>
-          <Typography variant="h4" style={{color:colorProps}}>{this.props.course}</Typography>
-          <Typography component="p">
-           An Online tool for learning remotely 
-          </Typography>
-          </div>
-          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><AssignIco style={{color:colorProps}} /> </IconButton>
-          
-        </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
-      
+        <CardContent style={{textAlign:"center",display:"flex"}} >
+          <Typography variant="h6" >KTR</Typography>
+
           <IconButton
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expanded,
@@ -79,10 +73,15 @@ class RecipeReviewCard extends React.Component {
           >
             <ExpandMoreIcon />
           </IconButton>
-        </CardActions>
+        </CardContent>
+ 
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Labs label="Login"  btncolor={colorProps} link="http://care.srmuniv.ac.in/ecurricula/"/>
+          <ElabCSE />
+            <Divider />
+            <ElabIT />
+            <Divider />
+            <ElabSWE />
           </CardContent>
         </Collapse>
       </Card>

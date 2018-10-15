@@ -3,17 +3,25 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
+import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from "@material-ui/core/Divider";
-import Labs from './Labs'
-
-import AssignIco from '@material-ui/icons/Assignment'
+import ElabKTR from './KTR/ElabKTR'
+import ElabVDP from './VDP/ElabVDP'
+import ElabRMP from './RMP/ElabRMP'
+import ElabNCR from './NCR/ElabNCR'
+import ElabOTH from './OTHERS/ElabOTH'
+import EducationIco from '@material-ui/icons/CastForEducation'
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -61,10 +69,10 @@ class RecipeReviewCard extends React.Component {
           <div>
           <Typography variant="h4" style={{color:colorProps}}>{this.props.course}</Typography>
           <Typography component="p">
-           An Online tool for learning remotely 
+           An Online Code evaluation tool
           </Typography>
           </div>
-          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><AssignIco style={{color:colorProps}} /> </IconButton>
+          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><EducationIco style={{color:colorProps}} /> </IconButton>
           
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
@@ -82,7 +90,15 @@ class RecipeReviewCard extends React.Component {
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Labs label="Login"  btncolor={colorProps} link="http://care.srmuniv.ac.in/ecurricula/"/>
+            <ElabKTR />
+            <Divider />
+            <ElabVDP />
+            <Divider />
+            <ElabRMP />
+            <Divider />
+            <ElabNCR />
+            <Divider />
+            <ElabOTH />
           </CardContent>
         </Collapse>
       </Card>

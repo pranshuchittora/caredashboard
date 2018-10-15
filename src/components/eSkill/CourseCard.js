@@ -13,7 +13,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Divider from "@material-ui/core/Divider";
 import Labs from './Labs'
 
-import SearchIco from '@material-ui/icons/YoutubeSearchedFor'
+import ExtensionIco from '@material-ui/icons/Extension'
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -64,7 +64,7 @@ class RecipeReviewCard extends React.Component {
            An Online tool for learning remotely
           </Typography>
           </div>
-          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><SearchIco style={{color:colorProps}} /> </IconButton>
+          <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><ExtensionIco style={{color:colorProps}} /> </IconButton>
           
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>

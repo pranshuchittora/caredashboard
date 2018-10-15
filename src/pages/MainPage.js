@@ -20,12 +20,13 @@ import {
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import ElabCourseCard from "../components/elab/CourseCard";
-import EProjCourseCard from '../components/eProject/CourseCard';
-import EThinkCourseCard from '../components/eThink/CourseCard'
-import ECurrCourseCard from '../components/eCurricula/CourseCard'
-import ESkillCourseCard from '../components/eSkill/CourseCard'
-import ELockCourseCard from '../components/elock/CourseCard'
-
+import EProjCourseCard from "../components/eProject/CourseCard";
+import EThinkCourseCard from "../components/eThink/CourseCard";
+import ECurrCourseCard from "../components/eCurricula/CourseCard";
+import ESkillCourseCard from "../components/eSkill/CourseCard";
+import ELockCourseCard from "../components/elock/CourseCard";
+import ECertificateCourseCard from "../components/eCertificate/CourseCard";
+import EeventCourseCard from "../components/eEvent/CourseCard";
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -131,7 +132,15 @@ class MiniDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <img style={{height:50,background:"rgba(255,255,255,0.6)",padding:"5px 10px",marginRight:10}} src="http://care.srmuniv.ac.in/logo.png" />
+            <img
+              style={{
+                height: 50,
+                background: "rgba(255,255,255,0.6)",
+                padding: "5px 10px",
+                marginRight: 10
+              }}
+              src="http://care.srmuniv.ac.in/logo.png"
+            />
             <Typography variant="h6" color="inherit" noWrap>
               Centre for Applied Research in Education
             </Typography>
@@ -156,7 +165,6 @@ class MiniDrawer extends React.Component {
               ) : (
                 <ChevronLeftIcon />
               )}
-            
             </IconButton>
           </div>
           <Divider />
@@ -167,31 +175,35 @@ class MiniDrawer extends React.Component {
         <main className={classes.content}>
           <div className={classes.toolbar} />
           {/* Main Tab */}
-          <Grid
-            container
-           
-            style={{ paddingTop: "30px" }}
-            spacing={24}
-          >
-          
-          <Grid item xs={12} md={4} lg={3} >
-                <ElabCourseCard course="eLab" colorHead="#3F51B5" />
-          </Grid>
-          <Grid item xs={12} md={4} lg={3}>
-                <EProjCourseCard course="eProject" colorHead="#2196F3" />
-          </Grid> 
-          <Grid item xs={12} md={4} lg={3}>
-                <EThinkCourseCard course="eThink" colorHead="#009688" />
-          </Grid> 
-          <Grid item xs={12} md={4} lg={3}>
-                <ECurrCourseCard course="eCuriculla" colorHead="#4CAF50" />
-          </Grid> 
-          <Grid item xs={12} md={4} lg={3}>
-                <ESkillCourseCard course="eSkill" colorHead="#CDDC39" />
-          </Grid> <Grid item xs={12} md={4} lg={3}>
-                <ELockCourseCard course="eLock" colorHead="#D84315" />
-          </Grid>
+          <Grid container style={{ paddingTop: "30px" }} spacing={24}>
+            <Grid item xs={12} md={4} lg={3}>
+              <ElabCourseCard course="eLab" colorHead="#3F51B5" />
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <EProjCourseCard course="eProject" colorHead="#2196F3" />
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <EThinkCourseCard course="eThink" colorHead="#009688" />
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <ECurrCourseCard course="eCuriculla" colorHead="#4CAF50" />
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <ESkillCourseCard course="eSkill" colorHead="#795548" />
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <ECertificateCourseCard
+                course="eCertificate"
+                colorHead="#6200EA"
+              />
+            </Grid>
 
+            <Grid item xs={12} md={4} lg={3}>
+              <EeventCourseCard course="eEvent" colorHead="#FFC107" />
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <ELockCourseCard course="eLock" colorHead="#D84315" />
+            </Grid>
           </Grid>
         </main>
       </div>
