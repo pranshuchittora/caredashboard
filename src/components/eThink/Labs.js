@@ -20,7 +20,7 @@ function ContainedButtons(props) {
   return (
     <div >
     
-      <Button variant="contained" style={{background:btnColor}} className={classes.button} href={props.link} target="_blank"  >
+      <Button variant="contained" style={{background:btnColor,color:"#ffffff"}} className={classes.button} href={props.link} target="_blank"  >
        {props.label}
  
       </Button>
