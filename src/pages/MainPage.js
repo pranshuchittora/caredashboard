@@ -132,17 +132,9 @@ class MiniDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <img
-              style={{
-                height: 50,
-                background: "rgba(255,255,255,0.6)",
-                padding: "5px 10px",
-                marginRight: 10
-              }}
-              src="http://care.srmuniv.ac.in/logo.png"
-            />
+        
             <Typography variant="h6" color="inherit" noWrap>
-              Centre for Applied Research in Education
+              SRM Centre for Applied Research in Education
             </Typography>
           </Toolbar>
         </AppBar>
@@ -186,7 +178,7 @@ class MiniDrawer extends React.Component {
               <EThinkCourseCard course="eThink" colorHead="#009688" />
             </Grid>
             <Grid item xs={12} md={4} lg={3}>
-              <ECurrCourseCard course="eCuriculla" colorHead="#4CAF50" />
+              <ECurrCourseCard course="eCurricula" colorHead="#4CAF50" />
             </Grid>
             <Grid item xs={12} md={4} lg={3}>
               <ESkillCourseCard course="eSkill" colorHead="#795548" />
