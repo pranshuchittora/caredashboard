@@ -6,9 +6,12 @@
 # testing
 /coverage
 
-# production
-/build
-
+/public
+/src
+/package.json
+/package-lock.json
+/yarn.lock
+/README.md
 # misc
 .DS_Store
 .env.local
