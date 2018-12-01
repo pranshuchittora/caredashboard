@@ -16,11 +16,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Divider from "@material-ui/core/Divider";
-import ElabKTR from "./KTR/ElabKTR";
-import ElabVDP from "./VDP/ElabVDP";
-import ElabRMP from "./RMP/ElabRMP";
-import ElabNCR from "./NCR/ElabNCR";
-import ElabOTH from "./OTHERS/ElabOTH";
+
 import CompIco from "@material-ui/icons/DesktopMac";
 import ElabStepper from "./Stepper";
 const styles = theme => ({
