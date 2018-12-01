@@ -132,7 +132,7 @@ class MiniDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-        
+
             <Typography variant="h6" color="inherit" noWrap>
               SRM Centre for Applied Research in Education
             </Typography>
@@ -140,7 +140,7 @@ class MiniDrawer extends React.Component {
         </AppBar>
         <Drawer
           title="SRMCARE"
-          variant="permanent"
+          variant="temporary"
           elevation={20}
           classes={{
             paper: classNames(
@@ -168,22 +168,22 @@ class MiniDrawer extends React.Component {
           <div className={classes.toolbar} />
           {/* Main Tab */}
           <Grid container style={{ paddingTop: "30px" }} spacing={24}>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <ElabCourseCard course="eLab" colorHead="#3F51B5" />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <EProjCourseCard course="eProject" colorHead="#2196F3" />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <EThinkCourseCard course="eThink" colorHead="#009688" />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <ECurrCourseCard course="eCurricula" colorHead="#4CAF50" />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <ESkillCourseCard course="eSkill" colorHead="#795548" />
             </Grid>
-            <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <ECertificateCourseCard
                 course="eCertificate"
                 colorHead="#6200EA"
