@@ -17,7 +17,14 @@ const department = [
   // department
   // KTR
   {
-    dep: ["CSE-KTR", "IT-KTR", "SWE-KTR"],
+    dep: [
+      "CSE-KTR",
+      "IT-KTR",
+      "SWE-KTR",
+      "PPS",
+      "3rd Year Skill Training",
+      "Staff Elab"
+    ],
     labs: [
       // Labs for KTR-CSE
       [
@@ -25,36 +32,83 @@ const department = [
         { label: "ADA", link: "http://care.srmuniv.ac.in/ada" }
       ],
       // Labs for KTR IT
-      [
-        { label: "JAVA-IT", link: "http://care.srmuniv.ac.in/javait" },
-        { label: "ADA-IT", link: "http://care.srmuniv.ac.in/adait" }
-      ],
+      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
       // Labs for KTR SWE
-      [
-        { label: "JAVA-SWE", link: "http://care.srmuniv.ac.in/javait" },
-        { label: "ADA-SWE", link: "http://care.srmuniv.ac.in/adait" }
-      ]
+      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for PPS
+      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for 3rd year skill
+      [{ label: "Skill Training", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for KTR Staff
+      [{ label: "Staff Lab", link: "http://care.srmuniv.ac.in/javait" }]
     ]
   },
   // RMP
   {
-    dep: ["CSE-RMP", "IT-RMP", "SWE-RMP"],
+    dep: ["CSE-RMP", "IT-RMP", "PPS", "3rd Year Skill Training", "Staff Elab"],
     labs: [
-      // Labs for KTR-CSE
+      // Labs for RMP-CSE
       [
-        { label: "JAVA RMP", link: "http://care.srmuniv.ac.in/java" },
-        { label: "ADA RMP", link: "http://care.srmuniv.ac.in/ada" }
+        { label: "JAVA", link: "http://care.srmuniv.ac.in/java" },
+        { label: "ADA", link: "http://care.srmuniv.ac.in/ada" }
       ],
-      // Labs for KTR IT
+      // Labs for RMP IT
+      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for PPS
+      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for 3rd year skill
+      [{ label: "Skill Training", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for KTR Staff
+      [{ label: "Staff Lab", link: "http://care.srmuniv.ac.in/javait" }]
+    ]
+  },
+  // VDP
+  {
+    dep: ["CSE", "PPS", "3rd Year Skill Training", "Staff"],
+    labs: [
+      // Labs for VDP CSE
+      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/java" }],
+      // Labs for VDP PPS
+      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for 3rd Year
       [
-        { label: "JAVA-IT", link: "http://care.srmuniv.ac.in/javait" },
-        { label: "ADA-IT", link: "http://care.srmuniv.ac.in/adait" }
+        {
+          label: "3rd Year Skill Training",
+          link: "http://care.srmuniv.ac.in/javait"
+        }
       ],
-      // Labs for KTR SWE
+      // Labs for Staff
+      [{ label: "Staff eLab", link: "http://care.srmuniv.ac.in/javait" }]
+    ]
+  },
+  // Delhi NCR
+  {
+    dep: ["CSE", "IT", "PPS", "3rd Year Skill Training", "Staff"],
+    labs: [
+      // Labs for NCR-CSE
+      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/java" }],
+      // Labs for NCR IT
+      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for NCR PPS
+      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      // Labs for 3rd Year
       [
-        { label: "JAVA-SWE", link: "http://care.srmuniv.ac.in/javait" },
-        { label: "ADA-SWE", link: "http://care.srmuniv.ac.in/adait" }
-      ]
+        {
+          label: "3rd Year Skill Training",
+          link: "http://care.srmuniv.ac.in/javait"
+        }
+      ],
+      // Labs for Staff
+      [{ label: "Staff eLab", link: "http://care.srmuniv.ac.in/javait" }]
+    ]
+  }, // Amravathi & Vallamai
+  {
+    dep: ["Amravathi", "TRP-Valliammai-Easwari"],
+    labs: [
+      // Labs for Amravathi
+      [{ label: "SRM - Amaravathi", link: "http://care.srmuniv.ac.in/java" }],
+      // Labs for TRP-EEC-VEC
+      [{ label: "TRP-EEC-VEC", link: "http://care.srmuniv.ac.in/javait" }]
     ]
   }
 ];
@@ -172,14 +226,6 @@ class VerticalLinearStepper extends React.Component {
                         className={classes.button}
                       >
                         Back
-                      </Button>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={this.handleNext}
-                        className={classes.button}
-                      >
-                        {activeStep === steps.length - 1 ? "Finish" : "Next"}
                       </Button>
                     </div>
                   </div>
