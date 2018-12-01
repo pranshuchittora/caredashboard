@@ -32,7 +32,6 @@ const drawerWidth = 240;
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: "100%",
     zIndex: 1,
     overflow: "hidden",
     position: "relative",
@@ -91,6 +90,15 @@ const styles = theme => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3
+  },
+  footer: {
+    position: "absolute",
+    bottom: 0,
+    background: "#3f51b5",
+    width: "100vw",
+    color: "#eee",
+    textAlign: "right",
+    fontFamily: "Roboto",
   }
 });
 
@@ -111,7 +119,7 @@ class MiniDrawer extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <div className={classes.root} style={{ minHeight: "100vh" }}>
         <AppBar
           position="absolute"
           color="primary"
@@ -198,6 +206,9 @@ class MiniDrawer extends React.Component {
             </Grid>
           </Grid>
         </main>
+        <div className={classes.footer}>
+          <h4><a href="http://care.srmuniv.ac.in" target="_blank">© SRMCARE. All rights reserved.</a></h4>
+        </div>
       </div>
     );
   }
