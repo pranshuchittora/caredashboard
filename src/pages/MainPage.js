@@ -98,7 +98,7 @@ const styles = theme => ({
     width: "100vw",
     color: "#eee",
     textAlign: "right",
-    fontFamily: "Roboto",
+    fontFamily: "Roboto"
   }
 });
 
@@ -175,7 +175,7 @@ class MiniDrawer extends React.Component {
         <main className={classes.content}>
           <div className={classes.toolbar} />
           {/* Main Tab */}
-          <Grid container style={{ paddingTop: "30px" }} spacing={24}>
+          <Grid container spacing={24}>
             <Grid item xs={12} sm={6} md={4} lg={3}>
               <ElabCourseCard course="eLab" colorHead="#3F51B5" />
             </Grid>
@@ -207,7 +207,11 @@ class MiniDrawer extends React.Component {
           </Grid>
         </main>
         <div className={classes.footer}>
-          <h4><a href="http://care.srmuniv.ac.in" target="_blank">© SRMCARE. All rights reserved.</a></h4>
+          <h4>
+            <a href="http://care.srmuniv.ac.in" target="_blank">
+              © SRMCARE. All rights reserved.
+            </a>
+          </h4>
         </div>
       </div>
     );
