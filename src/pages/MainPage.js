@@ -27,6 +27,8 @@ import ESkillCourseCard from "../components/eSkill/CourseCard";
 import ELockCourseCard from "../components/elock/CourseCard";
 import ECertificateCourseCard from "../components/eCertificate/CourseCard";
 import EeventCourseCard from "../components/eEvent/CourseCard";
+import FetchLS from "../util/FetchLocalStorage";
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -117,6 +119,7 @@ class MiniDrawer extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
+    const RecentData = FetchLS();
 
     return (
       <div className={classes.root} style={{ minHeight: "100vh" }}>
@@ -205,6 +208,7 @@ class MiniDrawer extends React.Component {
               <ELockCourseCard course="eLock" colorHead="#D84315" />
             </Grid>
           </Grid>
+          {RecentData && RecentData.map((val, idx) => <h1>{val.label}</h1>)}
         </main>
         <div className={classes.footer}>
           <h4>

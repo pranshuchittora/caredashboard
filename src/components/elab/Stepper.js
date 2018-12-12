@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 // Custom
 import Labs from "./Labs";
-
+import UpdateLS from "../../util/UpdateLocalStorage";
 const campus = ["KTR", "RMP", "VDP", "NCR", "Other Campus"];
 
 const department = [
@@ -160,7 +160,10 @@ class VerticalLinearStepper extends React.Component {
         return this.state.department >= 0
           ? department[this.state.campus].labs[this.state.department].map(
               (val, idx) => (
-                <div key={idx}>
+                <div
+                  key={idx}
+                  onClick={() => this.handleUpdateStorage(val.label, val.link)}
+                >
                   <Labs label={val.label} />
                 </div>
               )
@@ -203,6 +206,9 @@ class VerticalLinearStepper extends React.Component {
       activeStep: 0
     });
   };
+  handleUpdateStorage(label, link) {
+    UpdateLS(label, link);
+  }
 
   render() {
     const { classes } = this.props;
