@@ -8,11 +8,11 @@ const FetchLS = require("./FetchLocalStorage");
 // };
 
 // saveToLocalStorage(objects);
-export default function(lab, url) {
+export default function(camp, dep, lab, url) {
   let CurrentLS = [];
   if (FetchLS.default()) CurrentLS = FetchLS.default();
 
-  let newData = { label: lab, link: url };
+  let newData = { campus: camp, department: dep, label: lab, link: url };
   CurrentLS.unshift(newData);
   console.log(CurrentLS);
   localStorage.clear();

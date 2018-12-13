@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
+import Card from "@material-ui/core/Card";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
@@ -10,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import DeleteIcon from "@material-ui/icons/DeleteForever";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import {
@@ -28,14 +30,17 @@ import ELockCourseCard from "../components/elock/CourseCard";
 import ECertificateCourseCard from "../components/eCertificate/CourseCard";
 import EeventCourseCard from "../components/eEvent/CourseCard";
 import FetchLS from "../util/FetchLocalStorage";
+import Labs from "../components/elab/Labs";
+import { Button } from "@material-ui/core";
 
+const ContextRecents = React.createContext();
 const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     zIndex: 1,
-    overflow: "hidden",
+
     position: "relative",
     display: "flex"
   },
@@ -72,6 +77,7 @@ const styles = theme => ({
   },
   drawerPaperClose: {
     overflowX: "hidden",
+
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
@@ -106,7 +112,11 @@ const styles = theme => ({
 
 class MiniDrawer extends React.Component {
   state = {
-    open: false
+    open: false,
+    RecentData: FetchLS()
+  };
+  handleUpdateRecents = () => {
+    this.setState({ RecentData: FetchLS() });
   };
 
   handleDrawerOpen = () => {
@@ -116,108 +126,173 @@ class MiniDrawer extends React.Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
+  handleClearLS = () => {
+    this.handleUpdateRecents();
+  };
 
   render() {
     const { classes, theme } = this.props;
-    const RecentData = FetchLS();
 
     return (
-      <div className={classes.root} style={{ minHeight: "100vh" }}>
-        <AppBar
-          position="absolute"
-          color="primary"
-          className={classNames(
-            classes.appBar,
-            this.state.open && classes.appBarShift
-          )}
+      <ContextRecents.Provider
+        value={{ updateRecents: this.handleUpdateRecents }}
+      >
+        <div
+          className={classes.root}
+          style={{ minHeight: "100vh", width: "100vw" }}
         >
-          <Toolbar disableGutters={!this.state.open}>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.handleDrawerOpen}
-              className={classNames(
-                classes.menuButton,
-                this.state.open && classes.hide
-              )}
-            >
-              <MenuIcon />
-            </IconButton>
+          <AppBar
+            position="absolute"
+            color="primary"
+            className={classNames(
+              classes.appBar,
+              this.state.open && classes.appBarShift
+            )}
+          >
+            <Toolbar disableGutters={!this.state.open}>
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={this.handleDrawerOpen}
+                className={classNames(
+                  classes.menuButton,
+                  this.state.open && classes.hide
+                )}
+              >
+                <MenuIcon />
+              </IconButton>
 
-            <Typography variant="h6" color="inherit" noWrap>
-              SRM Centre for Applied Research in Education
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          title="SRMCARE"
-          variant="temporary"
-          elevation={20}
-          classes={{
-            paper: classNames(
-              classes.drawerPaper,
-              !this.state.open && classes.drawerPaperClose
-            )
-          }}
-          open={this.state.open}
-        >
-          <div className={classes.toolbar}>
-            <IconButton onClick={this.handleDrawerClose}>
-              {theme.direction === "rtl" ? (
-                <ChevronRightIcon />
-              ) : (
-                <ChevronLeftIcon />
-              )}
-            </IconButton>
+              <Typography variant="h6" color="inherit" noWrap>
+                SRM Centre for Applied Research in Education
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <Drawer
+            title="SRMCARE"
+            variant="temporary"
+            elevation={20}
+            classes={{
+              paper: classNames(
+                classes.drawerPaper,
+                !this.state.open && classes.drawerPaperClose
+              )
+            }}
+            open={this.state.open}
+          >
+            <div className={classes.toolbar}>
+              <IconButton onClick={this.handleDrawerClose}>
+                {theme.direction === "rtl" ? (
+                  <ChevronRightIcon />
+                ) : (
+                  <ChevronLeftIcon />
+                )}
+              </IconButton>
+            </div>
+            <Divider />
+            <List>{mailFolderListItems}</List>
+            <Divider />
+            <List>{otherMailFolderListItems}</List>
+          </Drawer>
+          <main
+            className={classes.content}
+            style={{
+              maxWidth: "100vw",
+              margin: 0,
+              marginTop: "2rem",
+              overflowX: "hidden"
+            }}
+          >
+            {/* Recents */}
+            {this.state.RecentData && (
+              <div style={{ marginTop: "1rem" }}>
+                <div style={{ marginBottom: "1rem" }}>
+                  <Typography
+                    variant="display1"
+                    style={{ display: "inline-block" }}
+                  >
+                    Recents
+                  </Typography>
+                  <Button
+                    style={{
+                      display: "inline-block",
+                      float: "right",
+                      marginRight: "0.5rem"
+                    }}
+                    variant="fab"
+                    color="secondary"
+                    onClick={() => {
+                      localStorage.clear();
+                      this.handleClearLS();
+                    }}
+                  >
+                    <DeleteIcon />
+                  </Button>
+                </div>
+                <div style={{ overflowX: "scroll", whiteSpace: "nowrap" }}>
+                  {this.state.RecentData &&
+                    this.state.RecentData.map((val, idx) => (
+                      <Paper
+                        key={idx}
+                        style={{
+                          width: "300px",
+                          // maxWidth: "100px",
+                          height: "200px",
+                          display: "inline-block",
+                          margin: "1rem 1rem",
+                          textAlign: "center"
+                        }}
+                      >
+                        <div>
+                          <h4>{val.campus}->{val.department}</h4>
+                          <Labs label={val.label} link={val.link} />
+                        </div>
+                      </Paper>
+                    ))}
+                </div>
+              </div>
+            )}
+            <div className={classes.toolbar} />
+            {/* Main Tab */}
+            <Grid container spacing={24}>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <ElabCourseCard course="eLab" colorHead="#3F51B5" />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <EProjCourseCard course="eProject" colorHead="#2196F3" />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <EThinkCourseCard course="eThink" colorHead="#009688" />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <ECurrCourseCard course="eCurricula" colorHead="#4CAF50" />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <ESkillCourseCard course="eSkill" colorHead="#795548" />
+              </Grid>
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <ECertificateCourseCard
+                  course="eCertificate"
+                  colorHead="#6200EA"
+                />
+              </Grid>
+
+              <Grid item xs={12} md={4} lg={3}>
+                <EeventCourseCard course="eEvent" colorHead="#FFC107" />
+              </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+                <ELockCourseCard course="eLock" colorHead="#D84315" />
+              </Grid>
+            </Grid>
+          </main>
+          <div className={classes.footer}>
+            <h4>
+              <a href="http://care.srmuniv.ac.in" target="_blank">
+                © SRMCARE. All rights reserved.
+              </a>
+            </h4>
           </div>
-          <Divider />
-          <List>{mailFolderListItems}</List>
-          <Divider />
-          <List>{otherMailFolderListItems}</List>
-        </Drawer>
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          {/* Main Tab */}
-          <Grid container spacing={24}>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <ElabCourseCard course="eLab" colorHead="#3F51B5" />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <EProjCourseCard course="eProject" colorHead="#2196F3" />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <EThinkCourseCard course="eThink" colorHead="#009688" />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <ECurrCourseCard course="eCurricula" colorHead="#4CAF50" />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <ESkillCourseCard course="eSkill" colorHead="#795548" />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
-              <ECertificateCourseCard
-                course="eCertificate"
-                colorHead="#6200EA"
-              />
-            </Grid>
-
-            <Grid item xs={12} md={4} lg={3}>
-              <EeventCourseCard course="eEvent" colorHead="#FFC107" />
-            </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-              <ELockCourseCard course="eLock" colorHead="#D84315" />
-            </Grid>
-          </Grid>
-          {RecentData && RecentData.map((val, idx) => <h1>{val.label}</h1>)}
-        </main>
-        <div className={classes.footer}>
-          <h4>
-            <a href="http://care.srmuniv.ac.in" target="_blank">
-              © SRMCARE. All rights reserved.
-            </a>
-          </h4>
         </div>
-      </div>
+      </ContextRecents.Provider>
     );
   }
 }
@@ -228,3 +303,4 @@ MiniDrawer.propTypes = {
 };
 
 export default withStyles(styles, { withTheme: true })(MiniDrawer);
+export const ContextRecentsConsumer = ContextRecents.Consumer;

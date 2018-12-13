@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 // Custom
+import { ContextRecentsConsumer } from "../../pages/MainPage";
 import Labs from "./Labs";
 import UpdateLS from "../../util/UpdateLocalStorage";
 const campus = ["KTR", "RMP", "VDP", "NCR", "Other Campus"];
@@ -160,12 +161,26 @@ class VerticalLinearStepper extends React.Component {
         return this.state.department >= 0
           ? department[this.state.campus].labs[this.state.department].map(
               (val, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => this.handleUpdateStorage(val.label, val.link)}
-                >
-                  <Labs label={val.label} />
-                </div>
+                <ContextRecentsConsumer>
+                  {context => (
+                    <div
+                      key={idx}
+                      onClick={() => {
+                        this.handleUpdateStorage(
+                          campus[this.state.campus],
+                          department[this.state.campus].dep[
+                            this.state.department
+                          ],
+                          val.label,
+                          val.link
+                        );
+                        context.updateRecents();
+                      }}
+                    >
+                      <Labs label={val.label} />
+                    </div>
+                  )}
+                </ContextRecentsConsumer>
               )
             )
           : null;
@@ -206,8 +221,8 @@ class VerticalLinearStepper extends React.Component {
       activeStep: 0
     });
   };
-  handleUpdateStorage(label, link) {
-    UpdateLS(label, link);
+  handleUpdateStorage(campus, department, label, link) {
+    UpdateLS(campus, department,   label, link);
   }
 
   render() {
