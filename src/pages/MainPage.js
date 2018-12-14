@@ -256,15 +256,13 @@ class MiniDrawer extends React.Component {
                             {val.campus} -> {val.department}
                           </Typography>
                           <Labs label={val.label} link={val.link} />
-                          
-                            
-                            <Typography
-                              variant="subheading"
-                              style={{ float:'right' }}
-                            >
-                              {moment(val.time).fromNow()}
-                            </Typography>
-                          
+
+                          <Typography
+                            variant="subheading"
+                            style={{ float: "right" }}
+                          >
+                            {moment(val.time).fromNow()}
+                          </Typography>
                         </div>
                       </Paper>
                     ))}

@@ -56,7 +56,7 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Card className={classes.card}>
+    <Card>
     
      
         <CardContent style={{textAlign:"center",display:"flex"}} >

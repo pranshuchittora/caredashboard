@@ -15,9 +15,7 @@ import Labs from './Labs'
 
 import PencilIco from '@material-ui/icons/BorderColor'
 const styles = theme => ({
-  card: {
-    maxWidth: 400,
-  },
+  
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
@@ -54,7 +52,7 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
     const colorProps = this.props.colorHead
     return (
-      <Card className={classes.card}>
+    <Card>
     
      
         <CardContent style={{display:"flex"}}>
