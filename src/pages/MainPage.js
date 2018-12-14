@@ -14,6 +14,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import DeleteIcon from "@material-ui/icons/DeleteForever";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import HistoryIcon from "@material-ui/icons/HistoryOutlined";
 import {
   mailFolderListItems,
   otherMailFolderListItems
@@ -33,7 +34,7 @@ import FetchLS from "../util/FetchLocalStorage";
 import Labs from "../components/elab/Labs";
 import { Button } from "@material-ui/core";
 import shadows from "@material-ui/core/styles/shadows";
-
+const moment = require("moment");
 const ContextRecents = React.createContext();
 const drawerWidth = 240;
 
@@ -243,7 +244,7 @@ class MiniDrawer extends React.Component {
                         style={{
                           width: "300px",
                           // maxWidth: "100px",
-                          height: "100px",
+                          height: "120px",
                           display: "inline-block",
                           margin: "1rem 1rem",
                           textAlign: "center",
@@ -255,6 +256,15 @@ class MiniDrawer extends React.Component {
                             {val.campus} -> {val.department}
                           </Typography>
                           <Labs label={val.label} link={val.link} />
+                          
+                            
+                            <Typography
+                              variant="subheading"
+                              style={{ float:'right' }}
+                            >
+                              {moment(val.time).fromNow()}
+                            </Typography>
+                          
                         </div>
                       </Paper>
                     ))}

@@ -12,7 +12,8 @@ export default function(camp, dep, lab, url) {
   let CurrentLS = [];
   if (FetchLS.default()) CurrentLS = FetchLS.default();
 
-  let newData = { campus: camp, department: dep, label: lab, link: url };
+  const timestamp = new Date()
+  let newData = { campus: camp, department: dep, label: lab, link: url,time:timestamp };
   CurrentLS.unshift(newData);
   localStorage.clear();
   const NewLS = uniqWith(CurrentLS, isEqual);
