@@ -34,6 +34,7 @@ import FetchLS from "../util/FetchLocalStorage";
 import Labs from "../components/elab/Labs";
 import { Button } from "@material-ui/core";
 import shadows from "@material-ui/core/styles/shadows";
+import { italic } from "ansi-colors";
 const moment = require("moment");
 const ContextRecents = React.createContext();
 const drawerWidth = 240;
@@ -261,7 +262,7 @@ class MiniDrawer extends React.Component {
                             variant="subheading"
                             style={{ float: "right" }}
                           >
-                            {moment(val.time).fromNow()}
+                            Accessed {moment(val.time).fromNow()}
                           </Typography>
                         </div>
                       </Paper>
