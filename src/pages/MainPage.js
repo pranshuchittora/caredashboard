@@ -236,14 +236,17 @@ class MiniDrawer extends React.Component {
                         style={{
                           width: "300px",
                           // maxWidth: "100px",
-                          height: "200px",
+                          height: "100px",
                           display: "inline-block",
                           margin: "1rem 1rem",
-                          textAlign: "center"
+                          textAlign: "center",
+                          padding: "10px"
                         }}
                       >
                         <div>
-                          <h4>{val.campus}->{val.department}</h4>
+                          <Typography variant="h5">
+                            {val.campus} -> {val.department}
+                          </Typography>
                           <Labs label={val.label} link={val.link} />
                         </div>
                       </Paper>

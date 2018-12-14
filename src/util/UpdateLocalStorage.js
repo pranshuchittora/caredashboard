@@ -14,7 +14,6 @@ export default function(camp, dep, lab, url) {
 
   let newData = { campus: camp, department: dep, label: lab, link: url };
   CurrentLS.unshift(newData);
-  console.log(CurrentLS);
   localStorage.clear();
   const NewLS = uniqWith(CurrentLS, isEqual);
   localStorage.setItem("care-history", JSON.stringify(NewLS));
