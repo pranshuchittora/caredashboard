@@ -16,5 +16,6 @@ export default function(camp, dep, lab, url) {
   CurrentLS.unshift(newData);
   localStorage.clear();
   const NewLS = uniqWith(CurrentLS, isEqual);
-  localStorage.setItem("care-history", JSON.stringify(NewLS));
+
+  localStorage.setItem("care-history", JSON.stringify(NewLS.slice(0, 5)));
 }

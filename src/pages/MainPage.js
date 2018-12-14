@@ -32,6 +32,7 @@ import EeventCourseCard from "../components/eEvent/CourseCard";
 import FetchLS from "../util/FetchLocalStorage";
 import Labs from "../components/elab/Labs";
 import { Button } from "@material-ui/core";
+import shadows from "@material-ui/core/styles/shadows";
 
 const ContextRecents = React.createContext();
 const drawerWidth = 240;
@@ -204,10 +205,16 @@ class MiniDrawer extends React.Component {
           >
             {/* Recents */}
             {this.state.RecentData && (
-              <div style={{ marginTop: "1rem" }}>
+              <div
+                style={{
+                  marginTop: "1rem",
+                  background: "#eef",
+                  padding: "1rem"
+                }}
+              >
                 <div style={{ marginBottom: "1rem" }}>
                   <Typography
-                    variant="display1"
+                    variant="display2"
                     style={{ display: "inline-block" }}
                   >
                     Recents
@@ -256,7 +263,7 @@ class MiniDrawer extends React.Component {
             )}
             <div className={classes.toolbar} />
             {/* Main Tab */}
-            <Grid container spacing={24}>
+            <Grid container spacing={24} justify="center">
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <ElabCourseCard course="eLab" colorHead="#3F51B5" />
               </Grid>
