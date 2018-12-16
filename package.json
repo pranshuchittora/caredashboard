@@ -57,7 +57,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -116,6 +118,7 @@
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^3.0.0",
+    "gh-pages": "^2.0.1",
     "husky": "^1.2.1",
     "prettier": "1.15.3",
     "pretty-quick": "^1.8.0",
