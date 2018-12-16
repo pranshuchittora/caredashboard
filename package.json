@@ -56,7 +56,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "precommit": "pretty-quick --staged"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -114,6 +115,10 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-prettier": "^3.0.0",
+    "husky": "^1.2.1",
+    "prettier": "1.15.3",
+    "pretty-quick": "^1.8.0",
     "webpack-bundle-analyzer": "^3.0.3"
   }
 }
