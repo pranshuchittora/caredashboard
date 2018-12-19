@@ -58,6 +58,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "postbuild": "rimraf build/**/*.map",
     "test": "node scripts/test.js",
     "precommit": "pretty-quick --staged",
     "predeploy": "yarn build",
@@ -124,6 +125,7 @@
     "husky": "^1.2.1",
     "prettier": "1.15.3",
     "pretty-quick": "^1.8.0",
+    "rimraf": "^2.6.2",
     "webpack-bundle-analyzer": "^3.0.3"
   }
 }
