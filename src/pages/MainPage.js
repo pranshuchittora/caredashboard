@@ -108,7 +108,6 @@ const styles = theme => ({
     background: "#3f51b5",
     width: "100vw",
     color: "#eee",
-    textAlign: "right",
     fontFamily: "Roboto"
   }
 });
@@ -303,13 +302,17 @@ class MiniDrawer extends React.Component {
               </Grid>
             </Grid>
           </main>
-          <div className={classes.footer}>
-            <h4>
-              <a href="http://care.srmuniv.ac.in" target="_blank">
-                © SRMCARE. All rights reserved.
+          <footer className={classes.footer}>
+            <div style={{ position: "relative", textAlign: "center" }}>
+              <a
+                href="https://github.com/pranshuchittora/caredashboard"
+                target="_blank"
+              >
+                <h4>For issues & contributions click here</h4>
               </a>
-            </h4>
-          </div>
+              <h4>© SRMCARE. All rights reserved.</h4>
+            </div>
+          </footer>
         </div>
       </ContextRecents.Provider>
     );

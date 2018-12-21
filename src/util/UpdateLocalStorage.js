@@ -1,5 +1,3 @@
-var isEqual = require("lodash.isequal");
-var uniqWith = require("lodash.uniqwith");
 const FetchLS = require("./FetchLocalStorage");
 // const CURRENT_LS_DATA = FetchLS;
 // const saveToLocalStorage = CURRENT_LS_DATA => {
