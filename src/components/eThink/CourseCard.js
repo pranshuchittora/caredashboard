@@ -17,7 +17,7 @@ import SearchIco from "@material-ui/icons/YoutubeSearchedFor";
 const styles = theme => ({
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9 
+    paddingTop: "56.25%" // 16:9
   },
   actions: {
     display: "flex"
@@ -51,15 +51,16 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
     const colorProps = this.props.colorHead;
     return (
-      <Card>
+      <Card style={{minHeight:'210px'}}>
         <CardContent style={{ display: "flex" }}>
           <div>
             <Typography variant="h4" style={{ color: colorProps }}>
               {this.props.course}
             </Typography>
             <Typography component="p">
-              An online tool for psychometric assessments to check your individual thinking, learning, intelligence and personality styles.
-
+              An online tool for psychometric assessments to check your
+              individual thinking, learning, intelligence and personality
+              styles.
             </Typography>
           </div>
           <IconButton

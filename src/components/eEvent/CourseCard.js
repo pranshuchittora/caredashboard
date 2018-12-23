@@ -56,7 +56,7 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
     const colorProps = this.props.colorHead;
     return (
-      <Card style={{ height: "100%" }}>
+      <Card style={{minHeight:'210px'}}>
         <CardContent style={{ display: "flex" }}>
           <div>
             <Typography variant="h4" style={{ color: colorProps }}>

@@ -25,7 +25,7 @@ const styles = theme => ({
     paddingTop: "56.25%" // 16:9
   },
   actions: {
-    display: "flex"
+    display: "flex",
   },
   expand: {
     transform: "rotate(0deg)",
@@ -57,7 +57,7 @@ class RecipeReviewCard extends React.Component {
     const colorProps = this.props.colorHead;
 
     return (
-      <Card style={{ height: "100%" }}>
+      <Card  style={{minHeight:'210px'}}>
         <CardContent style={{ display: "flex" }}>
           <div>
             <Typography variant="h4" style={{ color: colorProps }}>
