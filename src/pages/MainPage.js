@@ -165,7 +165,7 @@ class MiniDrawer extends React.Component {
               </IconButton>
 
               <Typography variant="h6" color="inherit" noWrap>
-                SRM Centre for Applied Research in Education
+                SRM Centre for Applied Research in Education (SRM - CARE)
               </Typography>
             </Toolbar>
           </AppBar>
@@ -273,7 +273,7 @@ class MiniDrawer extends React.Component {
             {/* Main Tab */}
             <Grid container spacing={24} justify="center">
               <Grid item xs={12} sm={6} md={4} lg={3}>
-                <ElabCourseCard  course="eLab" colorHead="#3F51B5" />
+                <ElabCourseCard course="eLab" colorHead="#3F51B5" />
               </Grid>
               {/* <Grid item xs={12} sm={6} md={4} lg={3}>
                 <EProjCourseCard course="eProject" colorHead="#2196F3" />
