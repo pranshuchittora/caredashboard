@@ -52,14 +52,14 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
     const colorProps = this.props.colorHead
     return (
-    <Card>
+    <Card style={{height:"100%"}}>
     
      
         <CardContent style={{display:"flex"}}>
           <div>
           <Typography variant="h4" style={{color:colorProps}}>{this.props.course}</Typography>
           <Typography component="p">
-           An Online tool for learning remotely
+           An Online tool to assess technical skills for job selection and competitive exams
           </Typography>
           </div>
           <IconButton style={{transform:"scale(1.8)",textAlign:"center",margin:"auto"}}><ExtensionIco style={{color:colorProps}} /> </IconButton>

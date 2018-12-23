@@ -17,7 +17,7 @@ import SearchIco from "@material-ui/icons/YoutubeSearchedFor";
 const styles = theme => ({
   media: {
     height: 0,
-    paddingTop: "56.25%" // 16:9
+    paddingTop: "56.25%" // 16:9 
   },
   actions: {
     display: "flex"
@@ -58,7 +58,8 @@ class RecipeReviewCard extends React.Component {
               {this.props.course}
             </Typography>
             <Typography component="p">
-              An Online tool to rethink yourself
+              An online tool for psychometric assessments to check your individual thinking, learning, intelligence and personality styles.
+
             </Typography>
           </div>
           <IconButton

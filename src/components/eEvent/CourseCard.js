@@ -56,14 +56,14 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
     const colorProps = this.props.colorHead;
     return (
-    <Card>
+      <Card style={{ height: "100%" }}>
         <CardContent style={{ display: "flex" }}>
           <div>
             <Typography variant="h4" style={{ color: colorProps }}>
               {this.props.course}
             </Typography>
             <Typography component="p">
-              An Online Project Submission Tool
+              An online tool for organising coding competitions
             </Typography>
           </div>
           <IconButton
@@ -90,12 +90,7 @@ class RecipeReviewCard extends React.Component {
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Labs
-              label="Request for access"
-              btncolor={colorProps}
-              link=""
-             
-            />
+            <Labs label="Request for access" btncolor={colorProps} link="" />
           </CardContent>
         </Collapse>
       </Card>
