@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/caredashboard/static/js/runtime~main.b42edb38.js"
   },
   {
-    "revision": "cb1bd0a0db56c54bb590",
-    "url": "/caredashboard/static/js/main.cb1bd0a0.chunk.js"
+    "revision": "059cfaf0760ef4c26264",
+    "url": "/caredashboard/static/js/main.059cfaf0.chunk.js"
   },
   {
     "revision": "e7a215327531910d17bc",
     "url": "/caredashboard/static/js/1.e7a21532.chunk.js"
   },
   {
-    "revision": "0ee69c5603d45cef7ffee113bfbc59e0",
+    "revision": "4cdb2ee1c18389808cc22f45dffdbf8a",
     "url": "/caredashboard/index.html"
   }
 ];
