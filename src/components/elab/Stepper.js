@@ -18,30 +18,49 @@ const department = [
   // department
   // KTR
   {
-    dep: [
-      "CSE-KTR",
-      "IT-KTR",
-      "SWE-KTR",
-      "PPS",
-      "3rd Year Skill Training",
-      "Staff Elab"
-    ],
+    dep: ["CSE", "IT", "SWE", "PPS", "3rd Year Skill Training", "Staff Elab"],
     labs: [
       // Labs for KTR-CSE
       [
-        { label: "JAVA", link: "http://care.srmuniv.ac.in/java" },
-        { label: "ADA", link: "http://care.srmuniv.ac.in/ada" }
+        {
+          label: "JAVA",
+          link: "http://care.srmuniv.ac.in/elockktrsrmcarecsejava"
+        },
+        {
+          label: "ADA",
+          link: "http://care.srmuniv.ac.in/elockadaktrsrmcarecsejava"
+        }
       ],
       // Labs for KTR IT
-      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
+      [
+        {
+          label: "JAVA & ADA",
+          link: "http://care.srmuniv.ac.in/elockitcaresrmadajavaktr"
+        }
+      ],
       // Labs for KTR SWE
-      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
+      [
+        {
+          label: "JAVA & ADA",
+          link: "http://care.srmuniv.ac.in/elockswecaresrmadajavaktr"
+        }
+      ],
       // Labs for PPS
-      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      [
+        {
+          label: "PPS",
+          link: "http://care.srmuniv.ac.in/elockcaresrmcseitswektrpps"
+        }
+      ],
       // Labs for 3rd year skill
-      [{ label: "Skill Training", link: "http://care.srmuniv.ac.in/javait" }],
+      [
+        {
+          label: "Skill Training",
+          link: "http://care.srmuniv.ac.in/ktrstudentskill"
+        }
+      ],
       // Labs for KTR Staff
-      [{ label: "Staff Lab", link: "http://care.srmuniv.ac.in/javait" }]
+      [{ label: "Staff Lab", link: "http://care.srmuniv.ac.in/ktrstaffskill" }]
     ]
   },
   // RMP
@@ -222,7 +241,7 @@ class VerticalLinearStepper extends React.Component {
     });
   };
   handleUpdateStorage(campus, department, label, link) {
-    UpdateLS(campus, department,   label, link);
+    UpdateLS(campus, department, label, link);
   }
 
   render() {

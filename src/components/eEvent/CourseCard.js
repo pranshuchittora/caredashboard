@@ -93,7 +93,7 @@ class RecipeReviewCard extends React.Component {
             <Labs
               label="Request for access"
               btncolor={colorProps}
-              link="#"
+              link=""
              
             />
           </CardContent>

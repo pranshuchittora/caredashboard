@@ -80,7 +80,7 @@ class RecipeReviewCard extends React.Component {
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <Labs label="Work In Progress" btncolor={colorProps}  btncolor={colorProps} />
+            <Labs label="Login / Register" btncolor={colorProps}  btncolor={colorProps} link="http://care.srmuniv.ac.in/eskill/" />
           </CardContent>
         </Collapse>
       </Card>

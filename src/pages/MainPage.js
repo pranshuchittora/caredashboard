@@ -275,9 +275,9 @@ class MiniDrawer extends React.Component {
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <ElabCourseCard course="eLab" colorHead="#3F51B5" />
               </Grid>
-              <Grid item xs={12} sm={6} md={4} lg={3}>
+              {/* <Grid item xs={12} sm={6} md={4} lg={3}>
                 <EProjCourseCard course="eProject" colorHead="#2196F3" />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <EThinkCourseCard course="eThink" colorHead="#009688" />
               </Grid>
@@ -287,22 +287,22 @@ class MiniDrawer extends React.Component {
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <ESkillCourseCard course="eSkill" colorHead="#795548" />
               </Grid>
-              <Grid item xs={12} sm={6} md={4} lg={3}>
+              {/* <Grid item xs={12} sm={6} md={4} lg={3}>
                 <ECertificateCourseCard
                   course="eCertificate"
                   colorHead="#6200EA"
                 />
-              </Grid>
+              </Grid> */}
 
               <Grid item xs={12} md={4} lg={3}>
                 <EeventCourseCard course="eEvent" colorHead="#FFC107" />
               </Grid>
-              <Grid item xs={12} md={4} lg={3}>
+              {/* <Grid item xs={12} md={4} lg={3}>
                 <ELockCourseCard course="eLock" colorHead="#D84315" />
-              </Grid>
+              </Grid> */}
             </Grid>
           </main>
-          <footer className={classes.footer}>
+          {/* <footer className={classes.footer}>
             <div style={{ position: "relative", textAlign: "center" }}>
               <a
                 href="https://github.com/pranshuchittora/caredashboard"
@@ -312,7 +312,7 @@ class MiniDrawer extends React.Component {
               </a>
               <h4>© SRMCARE. All rights reserved.</h4>
             </div>
-          </footer>
+          </footer> */}
         </div>
       </ContextRecents.Provider>
     );
