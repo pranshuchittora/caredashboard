@@ -196,7 +196,7 @@ class VerticalLinearStepper extends React.Component {
                         context.updateRecents();
                       }}
                     >
-                      <Labs label={val.label} />
+                      <Labs label={val.label} link={val.link} />
                     </div>
                   )}
                 </ContextRecentsConsumer>

@@ -20,7 +20,6 @@ import Divider from "@material-ui/core/Divider";
 import CompIco from "@material-ui/icons/DesktopMac";
 import ElabStepper from "./Stepper";
 const styles = theme => ({
- 
   media: {
     height: 0,
     paddingTop: "56.25%" // 16:9
@@ -58,7 +57,7 @@ class RecipeReviewCard extends React.Component {
     const colorProps = this.props.colorHead;
 
     return (
-    <Card style={{height:"100%"}}>
+      <Card style={{ height: "100%" }}>
         <CardContent style={{ display: "flex" }}>
           <div>
             <Typography variant="h4" style={{ color: colorProps }}>
