@@ -24,32 +24,32 @@ const department = [
       [
         {
           label: "JAVA",
-          link: "http://care.srmuniv.ac.in/elockktrsrmcarecsejava"
+          link: "http://care.srmuniv.ac.in/ktrcsejava/"
         },
         {
           label: "ADA",
-          link: "http://care.srmuniv.ac.in/elockadaktrsrmcarecsejava"
+          link: "http://care.srmuniv.ac.in/ktrcseada/"
         }
       ],
       // Labs for KTR IT
       [
         {
           label: "JAVA & ADA",
-          link: "http://care.srmuniv.ac.in/elockitcaresrmadajavaktr"
+          link: "http://care.srmuniv.ac.in/ktritjavaada/"
         }
       ],
       // Labs for KTR SWE
       [
         {
           label: "JAVA & ADA",
-          link: "http://care.srmuniv.ac.in/elockswecaresrmadajavaktr"
+          link: "http://care.srmuniv.ac.in/ktrswejavaada/"
         }
       ],
       // Labs for PPS
       [
         {
           label: "PPS",
-          link: "http://care.srmuniv.ac.in/elockcaresrmcseitswektrpps"
+          link: "http://care.srmuniv.ac.in/ktrpps/"
         }
       ],
       // Labs for 3rd year skill
@@ -65,21 +65,37 @@ const department = [
   },
   // RMP
   {
-    dep: ["CSE-RMP", "IT-RMP", "PPS", "3rd Year Skill Training", "Staff Elab"],
+    dep: ["CSE", "IT", "PPS", "3rd Year Skill Training", "Staff Elab"],
     labs: [
       // Labs for RMP-CSE
       [
-        { label: "JAVA", link: "http://care.srmuniv.ac.in/java" },
-        { label: "ADA", link: "http://care.srmuniv.ac.in/ada" }
+        {
+          label: "JAVA",
+          link: "http://care.srmuniv.ac.in/rmpcsejava/"
+        },
+        {
+          label: "ADA",
+          link: "http://care.srmuniv.ac.in/rmpcseada/"
+        }
       ],
       // Labs for RMP IT
-      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
+      [
+        {
+          label: "JAVA & ADA",
+          link: "http://care.srmuniv.ac.in/rmpitjavaada/"
+        }
+      ],
       // Labs for PPS
-      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      [{ label: "PPS", link: "http://care.srmuniv.ac.in/rmppps/" }],
       // Labs for 3rd year skill
-      [{ label: "Skill Training", link: "http://care.srmuniv.ac.in/javait" }],
+      [
+        {
+          label: "Skill Training",
+          link: "http://care.srmuniv.ac.in/rmpstudentskill/"
+        }
+      ],
       // Labs for KTR Staff
-      [{ label: "Staff Lab", link: "http://care.srmuniv.ac.in/javait" }]
+      [{ label: "Staff Lab", link: "http://care.srmuniv.ac.in/staffelabrmp/" }]
     ]
   },
   // VDP
@@ -87,18 +103,23 @@ const department = [
     dep: ["CSE", "PPS", "3rd Year Skill Training", "Staff"],
     labs: [
       // Labs for VDP CSE
-      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/java" }],
+      [
+        {
+          label: "JAVA & ADA",
+          link: "http://care.srmuniv.ac.in/vdpcsejavaada"
+        }
+      ],
       // Labs for VDP PPS
-      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      [{ label: "PPS", link: "http://care.srmuniv.ac.in/vdppps" }],
       // Labs for 3rd Year
       [
         {
           label: "3rd Year Skill Training",
-          link: "http://care.srmuniv.ac.in/javait"
+          link: "http://care.srmuniv.ac.in/vdpstudentskill/"
         }
       ],
       // Labs for Staff
-      [{ label: "Staff eLab", link: "http://care.srmuniv.ac.in/javait" }]
+      [{ label: "Staff eLab", link: "http://care.srmuniv.ac.in/staffelabvdp/" }]
     ]
   },
   // Delhi NCR
@@ -106,29 +127,29 @@ const department = [
     dep: ["CSE", "IT", "PPS", "3rd Year Skill Training", "Staff"],
     labs: [
       // Labs for NCR-CSE
-      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/java" }],
+      [{ label: "JAVA & ADA", link: "#" }],
       // Labs for NCR IT
-      [{ label: "JAVA & ADA", link: "http://care.srmuniv.ac.in/javait" }],
+      [{ label: "JAVA & ADA", link: "#" }],
       // Labs for NCR PPS
-      [{ label: "PPS", link: "http://care.srmuniv.ac.in/javait" }],
+      [{ label: "PPS", link: "#" }],
       // Labs for 3rd Year
       [
         {
           label: "3rd Year Skill Training",
-          link: "http://care.srmuniv.ac.in/javait"
+          link: "#"
         }
       ],
       // Labs for Staff
-      [{ label: "Staff eLab", link: "http://care.srmuniv.ac.in/javait" }]
+      [{ label: "Staff eLab", link: "#" }]
     ]
   }, // Amravathi & Vallamai
   {
     dep: ["Amravathi", "TRP-Valliammai-Easwari"],
     labs: [
       // Labs for Amravathi
-      [{ label: "SRM - Amaravathi", link: "http://care.srmuniv.ac.in/java" }],
+      [{ label: "SRM - Amaravathi", link: "#" }],
       // Labs for TRP-EEC-VEC
-      [{ label: "TRP-EEC-VEC", link: "http://care.srmuniv.ac.in/javait" }]
+      [{ label: "TRP-EEC-VEC", link: "#" }]
     ]
   }
 ];
