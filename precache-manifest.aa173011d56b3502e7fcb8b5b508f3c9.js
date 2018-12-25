@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/caredashboard/static/js/1.e7a21532.chunk.js"
   },
   {
-    "revision": "5f751bd96992011a76b46bc969627469",
+    "revision": "dab29389f154e2d627dc62bd17868d71",
     "url": "/caredashboard/index.html"
   }
 ];
